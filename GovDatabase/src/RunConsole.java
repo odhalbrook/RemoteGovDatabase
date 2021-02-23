@@ -64,11 +64,10 @@ public class RunConsole {
 			String username = userinput.nextLine();
 			System.out.println("Please create a password (Must include at least 1 Lowercase letter, 1 Uppercase letter, and 1 number)(No special characters and a max of 12 characters)");
 			String password = userinput.nextLine();
-			System.out.println("You will be assigned a secret identifier that will only be shown to you once, here it is");
+			System.out.println("You will be assigned a secret identifier that will only be shown to you once, so listen closely");
 			System.out.println();
 			String identifier = Generate.newIdentifier();
-			System.out.println(identifier);
-			System.out.println();
+			
 			
 			AccountList.add(new Account (username, name, password, identifier));
 			//User = AccountList.get(0);
@@ -91,8 +90,10 @@ public class RunConsole {
 			String username1 = userinput.nextLine();
 			System.out.println("Please create a password (Must include at least 1 Lowercase letter, 1 Uppercase letter, and 1 number)(No special characters and a max of 12 characters)");
 			String password = userinput.nextLine();
-			System.out.println("Please enter you identifier");
-			String identifier = userinput.nextLine();
+			System.out.println("You will be assigned a secret identifier that will only be shown to you once, so listen closely");
+			System.out.println();
+			String identifier = Generate.newIdentifier();
+			
 			
 			AccountList.add(new Account (username1, name, password, identifier));
 			//User = AccountList.get(0);
@@ -100,6 +101,7 @@ public class RunConsole {
 			System.out.println("Account Creation Success");
 			System.out.println("------------------------");
 			username = username1;
+			idCheck();
 		}
 		
 		for(int i = 0; i < AccountList.size(); i++)
