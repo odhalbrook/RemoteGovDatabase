@@ -11,7 +11,7 @@ public final class SpeakerOfTheHouse extends Representative{
 	{
 		System.out.println("I am the leader of the House of Representatives");
 	}
-	public void bangGavel()
+	public static void bangGavel()
 	{
 		System.out.println("The house will be in order.");
 	}

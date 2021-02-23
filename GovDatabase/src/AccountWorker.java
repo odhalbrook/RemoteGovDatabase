@@ -28,7 +28,7 @@ public class AccountWorker {
 	  		for(int i = 0; i < RunConsole.AccountList.size(); i++)
 	  		{
 	  			
-	  			 String prework = RunConsole.AccountList.get(i).getusername()+"/"+RunConsole.AccountList.get(i).getrealName()+"/"+RunConsole.AccountList.get(i).getpassword();
+	  			 String prework = RunConsole.AccountList.get(i).getusername()+"/"+RunConsole.AccountList.get(i).getrealName()+"/"+RunConsole.AccountList.get(i).getpassword()+"/"+RunConsole.AccountList.get(i).getIdentifier();
 	  			 String [] work = prework.split("");
 	  			 for(int w = 0; w < work.length; w++)
 	  			 {
@@ -89,7 +89,7 @@ public class AccountWorker {
 		        	 // System.out.println(postwork);
 		          		String [] unfixed = postwork.split("/");
 		          		
-		          		RunConsole.AccountList.add(new Account(unfixed[0], unfixed[1], unfixed[2]));
+		          		RunConsole.AccountList.add(new Account(unfixed[0], unfixed[1], unfixed[2], unfixed[3]));
 		        
 		       		}
 		          bufferedReader.close();
