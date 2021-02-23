@@ -5,13 +5,17 @@ public class Account {
 	  String username;
 	  String realName;
 	  String password;
+	  String identifier;
 	  
 	 
-	  public Account(String u, String rN, String p)
+	  
+
+	public Account(String u, String rN, String p, String i)
 	    {
 	    username = u;
 	    realName = rN;
 	    password = p;
+	    identifier = i;
 	    }
 
 	  public String getusername()
@@ -43,7 +47,13 @@ public class Account {
 		{
 			this.password = password;
 		}
-	  
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
 	
 	
 }

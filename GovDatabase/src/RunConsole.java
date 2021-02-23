@@ -2,6 +2,9 @@ import java.io.File;
 import java.io.IOException;
 import java.security.*;
 import javax.crypto.*;
+
+
+
 import java.util.*;
 public class RunConsole {
 
@@ -22,15 +25,13 @@ public class RunConsole {
 
 	
 	private static void mainMenu() throws IOException{
-		System.out.println("1. View all data");
-		System.out.println("2. Create new log");
+		System.out.println("1. Access my Job");
+		System.out.println("2. Create new Job for the System");
 		System.out.println("3. Exit");
 		int answer = userinput.nextInt();
 		switch(answer) {
 		case 1: 
-			System.out.println("-----------------------------------------------------");
-			System.out.println("***********This area is under Construction***********");
-			System.out.println("-----------------------------------------------------");
+			Connector.mainMenu1();
 
 				mainMenu();
 		break;
@@ -63,8 +64,13 @@ public class RunConsole {
 			String username = userinput.nextLine();
 			System.out.println("Please create a password (Must include at least 1 Lowercase letter, 1 Uppercase letter, and 1 number)(No special characters and a max of 12 characters)");
 			String password = userinput.nextLine();
+			System.out.println("You will be assigned a secret identifier that will only be shown to you once, here it is");
+			System.out.println();
+			String identifier = Generate.newIdentifier();
+			System.out.println(identifier);
+			System.out.println();
 			
-			AccountList.add(new Account (username, name, password));
+			AccountList.add(new Account (username, name, password, identifier));
 			//User = AccountList.get(0);
 			System.out.println("------------------------");
 			System.out.println("Account Creation Success");
@@ -85,8 +91,10 @@ public class RunConsole {
 			String username1 = userinput.nextLine();
 			System.out.println("Please create a password (Must include at least 1 Lowercase letter, 1 Uppercase letter, and 1 number)(No special characters and a max of 12 characters)");
 			String password = userinput.nextLine();
+			System.out.println("Please enter you identifier");
+			String identifier = userinput.nextLine();
 			
-			AccountList.add(new Account (username1, name, password));
+			AccountList.add(new Account (username1, name, password, identifier));
 			//User = AccountList.get(0);
 			System.out.println("------------------------");
 			System.out.println("Account Creation Success");
