@@ -7,5 +7,14 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/cmu_time_awb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/cmu_us_kal.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/cmudict04.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/cmulex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/cmutimelex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/en_us.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/freetts.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/freetts-jsapi10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/odhal/.eclipse/TTS/mbrola.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
