@@ -11,6 +11,7 @@ public class RunConsole {
 	static Scanner userinput = new Scanner (System.in);
 	static String ident;
 	public static Account User = null;
+	public static boolean loginSuccess = false;
 	public static ArrayList<Account> AccountList = new ArrayList<Account>();
 	public static void main(String args[]) throws Exception{
 	     
@@ -24,7 +25,7 @@ public class RunConsole {
 	   }
 
 	
-	private static void mainMenu() throws IOException{
+	static void mainMenu() throws IOException{
 		System.out.println("1. Access my Job");
 		System.out.println("2. Create new Job for the System");
 		System.out.println("3. Exit");
@@ -36,9 +37,8 @@ public class RunConsole {
 				mainMenu();
 		break;
 		case 2:
-			System.out.println("-----------------------------------------------------");
-			System.out.println("***********This area is under Construction***********");
-			System.out.println("-----------------------------------------------------");
+			
+			TicketMaker.newIdea();
 
 				mainMenu();
 		break;
@@ -54,7 +54,7 @@ public class RunConsole {
 	private static void idCheck() throws IOException {
 		
 		
-		
+		User = null;
 		if(AccountList.isEmpty())
 		{
 			System.out.println("It looks like there are no accounts to choose from, please create a new account");
@@ -74,7 +74,7 @@ public class RunConsole {
 			System.out.println("------------------------");
 			System.out.println("Account Creation Success");
 			System.out.println("------------------------");
-			
+			idCheck();
 		}
 		
 		
@@ -83,7 +83,8 @@ public class RunConsole {
 		
 		String username = userinput.nextLine();
 		
-		if(username.equals("new") || username.equals("New")) {
+		if(username.equals("new") || username.equals("New")) 
+		{
 			System.out.println("What is your full name?");
 			String name = userinput.nextLine();
 			System.out.println("Please enter a username");
@@ -130,7 +131,6 @@ public class RunConsole {
 			}
 		}
 		
-		
 		System.out.println("Hello " + User.getrealName() + ", please enter your password.");
 		String password = userinput.nextLine();
 		password = password.trim();
@@ -156,10 +156,10 @@ public class RunConsole {
 			
 			try{Thread.sleep(1000);}
 			catch(Exception e){}
-			
+			loginSuccess = true;
 		}
 		
-		else
+		else 
 		{
 			System.out.println("That was an incorrect password...");
 			System.out.println("If you want to try logging in again, enter Y, if you would not like to try and login in again, press enter");

@@ -4,16 +4,24 @@ import java.io.FileWriter;
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.PrintWriter;
 import java.util.*;
-public class TicketMaker {
+import java.awt.*;
+import javax.swing.*;
+public class TicketMaker extends JFrame {
 
 	static Scanner uI = new Scanner (System.in);
 	static String name;
-	public static void newIdea()
+	static int choice = 0;
+	public static void newIdea() throws IOException
 	{
 		
 		System.out.println("Please enter a name for the idea you would like to add");
 		name = uI.nextLine();
 		createFile();
+		while(choice!=1)
+		{
+			addIt();
+		}
+		
 	}
 
 	public static void addIt() throws IOException
@@ -30,7 +38,16 @@ public class TicketMaker {
 
 	          // Always wrap FileWriter in BufferedWriter.
 	          BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+	          String info = JOptionPane.showInputDialog("What would you like to write in ticket called "+name); 
+	          bufferedWriter.write(info);
+	          bufferedWriter.newLine();
 	          
+	          Object[] options = {"Yes", "No"};
+		  		choice = JOptionPane.showOptionDialog( null, "Would you like to add anything else to "+name+"?",
+		  				"Anything Else",
+		  				JOptionPane.YES_NO_CANCEL_OPTION,
+		  				JOptionPane.QUESTION_MESSAGE,
+		  				null, options, options[1]);
 	          
 	      }
 	      catch(Exception e) 
