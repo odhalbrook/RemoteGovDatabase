@@ -25,10 +25,13 @@ public class RunConsole {
 	   }
 
 	
-	static void mainMenu() throws IOException{
+	private static void mainMenu() throws IOException{
+		
+		
 		System.out.println("1. Access my Job");
-		System.out.println("2. Create new Job for the System");
+		System.out.println("2. Create File with an Idea for something new");
 		System.out.println("3. Exit");
+		 Scanner userinput1 = new Scanner (System.in);
 		int answer = userinput.nextInt();
 		switch(answer) {
 		case 1: 
@@ -74,16 +77,16 @@ public class RunConsole {
 			System.out.println("------------------------");
 			System.out.println("Account Creation Success");
 			System.out.println("------------------------");
-			idCheck();
+			
 		}
 		
 		
 		
 		System.out.println("Please enter your username or type 'new' to create a new account");
 		
-		String username = userinput.nextLine();
+		String Username = userinput.nextLine();
 		
-		if(username.equals("new") || username.equals("New")) 
+		if(Username.equals("new") || Username.equals("New")) 
 		{
 			System.out.println("What is your full name?");
 			String name = userinput.nextLine();
@@ -101,13 +104,13 @@ public class RunConsole {
 			System.out.println("------------------------");
 			System.out.println("Account Creation Success");
 			System.out.println("------------------------");
-			username = username1;
-			idCheck();
+			Username = username1;
+			
 		}
 		
 		for(int i = 0; i < AccountList.size(); i++)
 		{
-			if(AccountList.get(i).getusername().equals(username))
+			if(AccountList.get(i).getusername().equals(Username))
 			{
 				User = AccountList.get(i);
 			}
@@ -178,7 +181,7 @@ public class RunConsole {
 	}
 
 	private static void greetUser() {
-		System.out.println("Hello and welcome to the PDV (Personal Data Vault)");
+		System.out.println("Hello and welcome to the PDV (Personal Data Vault) / Responsibility Reminder / New Idea Creator");
 		//System.out.println("Please enter your identifier along with your date of birth and your mother's maiden name, all seperated by a period with no spaces and all lowercase.");
 		
 	}
